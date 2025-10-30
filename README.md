@@ -2,6 +2,12 @@
 
 Marimo notebook analysis of CVE-2025-53766 GDI+ Remote Code Execution Vulnerability using the Rust Diff plugin for Binary Ninja https://github.com/meerkatone/rust_diff
 
+For comparision here is the Ghidra diff:
+https://diffpreview.github.io/?dbeeb4d26df26d1e509e2c5edb72c08e 
+
+Analysis using: 
+https://github.com/clearbluejar/ghidriff
+
 ## Clone the repo
 git clone https://github.com/meerkatone/patch_chewsday_cve_2025_53766.git
 
