@@ -1,6 +1,6 @@
 ## Binary Diffing and Marimo Rust
 
-Marimo notebook analysis of CVE-2025-21338 GDI+ Remote Code Execution Vulnerability using the Rust Diff plugin for Binary Ninja https://github.com/meerkatone/rust_diff
+Marimo notebook analysis of CVE-2025-53766 GDI+ Remote Code Execution Vulnerability using the Rust Diff plugin for Binary Ninja https://github.com/meerkatone/rust_diff
 
 ## Clone the repo
 git clone https://github.com/meerkatone/patch_chewsday_cve_2025_53766.git
