@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.17.2"
+__generated_with = "0.18.0"
 app = marimo.App(width="full")
 
 
@@ -21,7 +21,9 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h1>Patch Chewsday Analysis: CVE-2025-53766 GDI+ Remote Code Execution Vulnerability</h1>""")
+    mo.md(r"""
+    <h1>Patch Chewsday Analysis: CVE-2025-53766 GDI+ Remote Code Execution Vulnerability</h1>
+    """)
     return
 
 
@@ -33,14 +35,15 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>CVE Workflow</h2>""")
+    mo.md(r"""
+    <h2>CVE Workflow</h2>
+    """)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     - Search the MITRE CVE site for Microsoft Windows 11, and pick a CVE that looks interesting from the last three months:
         - https://www.cve.org/CVERecord/SearchResults?query=microsoft+windows+11
         - Review the CVE description
@@ -50,7 +53,7 @@ def _(mo):
         - Find the patched build version number
         - Check the KB article:
             - https://support.microsoft.com/en-gb/topic/august-12-2025-kb5063878-os-build-26100-4946-e4b87262-75c8-4fef-9df7-4a18099ee294
-        - Check the binaries that have been updated for the provided list in the KB:     
+        - Check the binaries that have been updated for the provided list in the KB:
             - https://go.microsoft.com/fwlink/?linkid=2331814
             - gdiplus.dll appears in the list
 
@@ -68,8 +71,7 @@ def _(mo):
     - Comapare the results with the Binary Ninja Rust Diff plugin
         - Look for the vulnerability, and the patch
         - Ask AI: "You're absolutely right!"
-    """
-    )
+    """)
     return
 
 
@@ -111,7 +113,9 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>BinDiff Results</h2>""")
+    mo.md(r"""
+    <h2>BinDiff Results</h2>
+    """)
     return
 
 
@@ -123,7 +127,9 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>BinDiff Results in Binary Ninja</h2>""")
+    mo.md(r"""
+    <h2>BinDiff Results in Binary Ninja</h2>
+    """)
     return
 
 
@@ -135,7 +141,9 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>Setup Dataframe</h2>""")
+    mo.md(r"""
+    <h2>Setup Dataframe</h2>
+    """)
     return
 
 
@@ -180,7 +188,9 @@ def _(Path, json, pd):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>Binary Ninja Diff Plugin</h2>""")
+    mo.md(r"""
+    <h2>Binary Ninja Diff Plugin</h2>
+    """)
     return
 
 
@@ -192,7 +202,9 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>Binary Ninja Pseudo C Decompilation </h2>""")
+    mo.md(r"""
+    <h2>Binary Ninja Pseudo C Decompilation </h2>
+    """)
     return
 
 
@@ -213,8 +225,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ```text
 
     Vulnerable Code
@@ -241,50 +252,51 @@ def _(mo):
 
     Prevents unbounded writes to EpAlphaBlender::Blend
     ```
-    """
-    )
+    """)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>Patch Concerns</h2>""")
+    mo.md(r"""
+    <h2>Patch Concerns</h2>
+    """)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     - Potential for the bug to resurface if there is regression in the code base
     - Similar bugs may be in other parts of GDI+ or in other core components of Windows
-    """
-    )
+    """)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>Next Steps</h2>""")
+    mo.md(r"""
+    <h2>Next Steps</h2>
+    """)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     - Create PoC to help test our assumptions
     - Check for similar bugs in GDI+ via program analysis
     - Check for similar bugs across the core windows binaries via program analysis - file format parsers are the gift that keep giving
     - Fuzzing
-    """
-    )
+    """)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>Query Similarity < 0.99</h2>""")
+    mo.md(r"""
+    <h2>Query Similarity < 0.99</h2>
+    """)
     return
 
 
@@ -305,7 +317,9 @@ def _(duckdb, mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>Similarity Slider</h2>""")
+    mo.md(r"""
+    <h2>Similarity Slider</h2>
+    """)
     return
 
 
@@ -323,7 +337,9 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>Functions with Similarity Below Slider Threshold (Bar Chart)</h2>""")
+    mo.md(r"""
+    <h2>Functions with Similarity Below Slider Threshold (Bar Chart)</h2>
+    """)
     return
 
 
@@ -352,7 +368,9 @@ def _(alt, mo, sim, similarity_slider):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>Query Function Name Matches</h2>""")
+    mo.md(r"""
+    <h2>Query Function Name Matches</h2>
+    """)
     return
 
 
@@ -375,7 +393,9 @@ def _(duckdb, mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<h2>Query Best Matches</h2>""")
+    mo.md(r"""
+    <h2>Query Best Matches</h2>
+    """)
     return
 
 
@@ -402,14 +422,12 @@ def _(duckdb, mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     <h2>References</h2>
      - CVE-2025-53766: https://www.cve.org/CVERecord?id=CVE-2025-53766
      - GDI+ Remote Code Execution Vulnerability: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-38063
      - gdiplus.dll - Winbindex: https://winbindex.m417z.com/?file=gdiplus.dll
-    """
-    )
+    """)
     return
 
 
